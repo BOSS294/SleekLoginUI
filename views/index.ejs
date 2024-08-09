@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+</head>
+<body>
+    <div class="background"></div>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form action="/" method="post">
+            <div class="input-container">
+                <i class="material-icons input-icon">person</i>
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+            <div class="input-container">
+                <i class="material-icons input-icon">lock</i>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <i class="material-icons eye-icon" id="togglePassword">visibility</i>
+            </div>
+            <button type="submit">
+                <i class="material-icons">login</i> Login
+            </button>
+        </form>
+        <div class="additional-links">
+            <a href="#" class="forgot-password">
+                <i class="material-icons">lock_open</i> Forgot Password? Reset Now
+            </a>
+            <p class="register-info">
+                <a href="#" class="register-now">
+                    <i class="material-icons">person_add</i> Don't have an account? Register Now
+                </a>
+            </p>
+        </div>
+        <div class="social-signin">
+            <p>Login Via</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon google">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOHfr0eFGK7KzPlSElPnkrVAw9H4g2HNkkXw&s" alt="Google">
+                </a>
+                <a href="#" class="social-icon discord">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrxx38Bv6TQI-zrq78I25Z7x2rd1X3ysgkGw&s" alt="Discord">
+                </a>
+                <a href="#" class="social-icon github">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_-Rj2NdS6X2tWU45WpMeMEdmATMKEpJDmfw&s" alt="GitHub">
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    
+    <script>
+        var setVanta = () => {
+            if (window.VANTA) window.VANTA.WAVES({
+                el: ".background",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0x90909
+            });
+        }
+        setVanta();
+    </script>
+     <script>
+        document.getElementById('togglePassword').addEventListener('click', function () {
+            const passwordInput = document.getElementById('password');
+            const icon = this;
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.textContent = 'visibility_off';
+            } else {
+                passwordInput.type = 'password';
+                icon.textContent = 'visibility';
+            }
+        });
+    </script>
+</body>
+</html>
